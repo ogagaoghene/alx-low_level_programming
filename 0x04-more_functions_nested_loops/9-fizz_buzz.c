@@ -13,15 +13,15 @@ int main(void)
 	{
 		if ((index % 3 == 0) && (index % 5 == 0))
 		{
-			printf("FizzBuzz");
+			printf("FizzBuzz,\t");
 		}
 		else if (index % 5 == 0)
 		{
-			printf("Buzz");
+			printf("Buzz,\t");
 		}
 		else if (index % 3 == 0)
 		{
-			printf("Fizz");
+			printf("Fizz,\t");
 		}
 		else 
 			printf("\n");	
