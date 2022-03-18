@@ -1,20 +1,35 @@
 #include "main.h"
 
 /**
- * print_number - function with one type int argument
- * @n: 1st int type argument
- *
- * Description: if/else and recursion to print integer with putchar only
- * Return: na
+ * print_number - prints an integer.
+ * @n: input integer.
+ * Return: no return.
  */
 void print_number(int n)
 {
+	unsigned int m, d, count;
+
 	if (n < 0)
 	{
-		n = -n;
-		_putchar('-');
+		_putchar(45);
+		m = n * -1;
 	}
-	if (n / 10)
-		print_number(n / 10);
-	_putchar(n % 10 + '0');
+	else
+	{
+		m = n;
+	}
+
+	d = m;
+	count = 1;
+
+	while (d > 9)
+	{
+		d /= 10;
+		count *= 10;
+	}
+
+	for (; count >= 1; count /= 10)
+	{
+		_putchar(((m / count) % 10) + 48);
+	}
 }
