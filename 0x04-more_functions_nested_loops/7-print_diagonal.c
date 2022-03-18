@@ -2,30 +2,30 @@
 
 /**
  * print_diagonal - Print diagonal
- *@n: variable
- * Return: void .
+ * @n: variable - enter number of spaces
+ * Return: void 
  */
 void print_diagonal(int n)
 {
-	int count, i;
-	count = 0;
-	if (n > 0)
+	int row, num_lines;
+	
+	if (n <= 0) 
 	{
-		while (count < n)
+		_putchar("\n");
+	}
+	else 
+	{
+		for(row = 1; row <= n; row++)
 		{
-			count++;
-			i = count;
-			while (i > 1)
+			if (row > 1)
 			{
-				_putchar(' ');
-				i--;
+				for(number_of_lines = 1; num_lines <= row - 1; num_lines++)
+				{
+					_put_char(' ');
+				}
 			}
 			_putchar('\\');
 			_putchar('\n');
 		}
-	}
-	else if (n <= 0)
-	{
-		_putchar('\n');
 	}
 }
