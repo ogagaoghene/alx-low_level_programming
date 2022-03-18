@@ -1,3 +1,6 @@
+#ifndef
+#define 
+
 int _putchar(char c);
 int _isupper(int c);
 int _isdigit(int c);
@@ -11,4 +14,4 @@ void print_square(int size);
 void print_triangle(int size);
 int main(void);
 
-
+#endif
