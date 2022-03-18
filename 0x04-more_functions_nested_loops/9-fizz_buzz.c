@@ -25,7 +25,12 @@ int main(void)
 			printf("Fizz,\t");
 		}
 		else 
+			printf("%i", index);
+
+		if (index < 100)
+			printf(" ");
+		else 
 			printf("\n");	
-	}
+	}		
 	return (0);		
 }
