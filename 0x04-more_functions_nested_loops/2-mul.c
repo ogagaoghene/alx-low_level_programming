@@ -2,14 +2,13 @@
 #include <stdio.h>
 
 /**
- * mul - multiplies two integers
- *@a : variable
- *@b : variable
- * Return: result
+ * mul - Multiply 2 integers.
+ * @a: An integer to be multiplied with b
+ * @b : An integer to be multipled with a
+ * Return: Return the result of the multiplication
  */
 int mul(int a, int b)
-{	
-	int result;
-	result = (a * b);
-	return (result);
+{
+	return (a * b);
 }
+
