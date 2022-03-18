@@ -1,42 +1,40 @@
-#include "mai.h"
+#include "main.h"
 #include <stdio.h>
 
 /**
- * main - Fizz for multiples of 3 and Buzz for multiples of 5 FizzBuzz for both
- *
- *
- * Return: Always 0
+ * main - check the code for Holberton School students.
+ * Return: Always 0.
  */
 int main(void)
 {
-	int count = 1;
-
-	while (count < 101)
+	int i = 1;
+	while (i <= 100)
 	{
-		if (count % 3 == 0 && count % 5 == 0)
+		if (i % 3 == 0 && i % 5 == 0)
 		{
-			printf("%s", "FizzBuzz");
+			printf("FizzBuzz ");
 		}
-		else if (count % 3 == 0)
+		else if (i % 3 == 0)
 		{
-			printf("%s", "Fizz");
+			printf("Fizz ");
 		}
-		else if (count % 5 == 0)
+		else if (i % 5 == 0)
 		{
-			printf("%s", "Buzz");
+			if (i == 100)
+			{
+				printf("Buzz");
+			}
+			else if (i != 100)
+			{
+				printf("Buzz ");
+			}
 		}
 		else
 		{
-			printf("%d", count);
+			printf("%d ", i);
 		}
-
-		if (count != 100)
-		{
-		printf(" ");
-		}
-		count++;
+		i++;
 	}
-	printf("\n");
+		printf("\n");
 	return (0);
 }
-
