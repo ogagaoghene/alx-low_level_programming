@@ -1,35 +1,32 @@
-#include <stdio.h>
-
+#include "stdio.h"
 /**
-* main - entry point
-* Return: void
-*/
-
+ * main - primary function with for loop
+ *
+ * Description: for loop with if/else to print digits from 1 to 100
+ * Return: na
+ */
 int main(void)
 {
-	int index;
+	int x;
 
-	for (index = 1; index <= 100; index++)  
+	for (x = 1; x < 101; x++)
 	{
-		if ((index % 3 == 0) && (index % 5 == 0))
+		if (x % 3 == 0)
 		{
-			printf("FizzBuzz");
-		}
-		else if (index % 5 == 0)
+			if (x % 5 == 0)
+				printf("FizzBuzz ");
+			else
+				printf("Fizz ");
+		} 
+		else if (x % 5 == 0)
 		{
-			printf("Buzz");
+			if (x == 100)
+				printf("Buzz\n");
+			else
+				printf("Buzz ");
 		}
-		else if (index % 3 == 0)
-		{
-			printf("Fizz");
-		}
-		else 
-			printf("%i", index);
-
-		if (index < 100)
-			printf(" ");
-		else 
-			printf("\n");	
-	}		
-	return (0);		
+		else
+			printf("%d ", x);
+	}
+	return (0);
 }
