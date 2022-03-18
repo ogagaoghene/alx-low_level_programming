@@ -1,31 +1,31 @@
-#include "main.h"
+#include "holberton.h"
 
 /**
- * print_diagonal - Print diagonal
- * @n: variable - enter number of spaces
- * Return: void 
+ * print_diagonal - check the code for Holberton School students.
+ *@n: variable
+ * Return: void .
  */
 void print_diagonal(int n)
 {
-	int row, num_lines;
-	
-	if (n <= 0) 
-	{
-		_putchar("\n");
-	}
-	else 
-	{
-		for(row = 1; row <= n; row++)
-		{
-			if (row > 1)
-			{
-				for(number_of_lines = 1; num_lines <= row - 1; num_lines++)
-				{
-					_put_char(' ');
-				}
-			}
-			_putchar('\\');
-			_putchar('\n');
-		}
-	}
+int count, i;
+count = 0;
+if (n > 0)
+{
+while (count < n)
+{
+count++;
+i = count;
+while (i > 1)
+{
+_putchar(' ');
+i--;
 }
+_putchar('\\');
+_putchar('\n');
+}
+}
+else if (n <= 0)
+{
+_putchar('\n');
+}
+
