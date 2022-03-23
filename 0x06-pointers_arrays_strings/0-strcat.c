@@ -9,18 +9,17 @@
 
 char *_strcat(char *dest, char *src)
 {
-	int first_index. second_index;
+	int a = 0;
+	int b = 0;
 
-	for (first_index = 0; dest[first_index] != '\0'; first_index++)
+	while (dest[a] != '\0')
+		a++;
+	while (src[b] != '\0')
 	{
-		continue;
+		dest[a] = src[b];
+		b++;
+		a++;
 	}
-
-	for (second_index = 0; src[second_index] != '\0'; second_index++)
-	{
-		dest[first_index] += src[second_index];
-		first_index++;
-	}
-	dest += '\0';
 	return (dest);
 }
+
