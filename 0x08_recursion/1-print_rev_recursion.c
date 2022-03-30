@@ -1,9 +1,8 @@
-#include "main.h"
-
+#include "holberton.h"
+#include <string.h>
 /**
- * _print_rev_recursion - reverse
- * @s: pointer to string params
- *
+ * _print_rev_recursion - check the code for Holberton School students.
+ *@s : parameter
  */
 
 void _print_rev_recursion(char *s)
@@ -14,4 +13,3 @@ void _print_rev_recursion(char *s)
 		_putchar(*s);
 	}
 }
-
