@@ -1,20 +1,19 @@
 #include "main.h"
 
 /**
- *_puts_recursion - print a string.
- *@s: string to print.
+ * _puts_recursion - Prints a string followed by a new line
+ * @s: string
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
  */
-
 void _puts_recursion(char *s)
 {
-	unsigned int i = 0;
-
-	if (s[i])
+	if (*s == 0)
 	{
-		_putchar(s[i]);
-		i++;
-		_puts_recursion(s + i);
-	}
-	else
 		_putchar('\n');
+		return;
+	}
+	_putchar(*s);
+	_puts_recursion(s + 1);
 }
