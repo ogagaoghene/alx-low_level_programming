@@ -1,70 +1,44 @@
 #include "main.h"
-#include <stdio.h>
+#include <stdlib.h>
 /**
- * _strlen - length of a string
- * @s: input char
- * Return: length of a string
- */
-
-int _strlen(char *s)
-{
-	int l = 0;
-
-	while (*s != '\0')
-	{
-		s++;
-		l++;
-	}
-
-	return (l);
-}
-
-/**
- * argstostr - concat
- * @ac: count
- * @av: vector
- * Return: string
+ * argstostr - function that concatenates all the arguments of your program
+ * @ac: variable
+ * @av: pointer to string
+ *
+ * Return: NULL if ac == 0 or av == NULL
+ *         pointer to a new string, or NULL if it fails
  */
 
 char *argstostr(int ac, char **av)
 {
-	int i, j, k;
-	int len, R = 0;
-	char *p;
+	char *str;
+	int arg, byte, index, size = ac;
 
-	if (!ac || !av)
-	{
+	if (ac == 0 || av == NULL)
 		return (NULL);
+
+	for (arg = 0; arg < ac; arg++)
+	{
+		for (byte = 0; av[arg][byte]; byte++)
+			size++;
 	}
 
-	R = 0;
+	str = malloc(sizeof(char) * size + 1);
 
-	for (i = 0; i < ac; i++)
-	{
-		len = _strlen(av[i]) + 1;
-		R += len;
-	}
-
-	p = malloc(sizeof(char) * R + 1);
-
-	if (!p)
-	{
+	if (str == NULL)
 		return (NULL);
-	}
 
-	for (i = 0; i < ac; i++)
+	index = 0;
+
+	for (arg = 0; arg < ac; arg++)
 	{
-		len = _strlen(av[i]);
+		for (byte = 0; av[arg][byte]; byte++)
+			str[index++] = av[arg][byte];
 
-		for (j = 0; j < len; j++, k++)
-		{
-			p[k] = av[i][j];
-		}
-
-		p[k++] = '\n';
+		str[index++] = '\n';
 	}
 
-	p[k] = '\0';
-	return (p);
+	str[size] = '\0';
+
+	return (str);
 }
-
