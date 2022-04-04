@@ -1,26 +1,33 @@
-#include <stdio.h>
+#include "main.h"
 #include <stdlib.h>
+#include <stdio.h>
 /**
- * create_array - create array
- * @size: size
- * @c: constant
- * Return: char pointer
- */
+  *create_array - main function
+  *@size : the size of the integer
+  *@c : the car that will have the size
+  *Return: character
+  */
 
 char *create_array(unsigned int size, char c)
 {
-	char *p;
-	unsigned int i;
-
+	char *s;
 	if (size == 0)
-		return (0);
-	p = malloc((size) * sizeof(char));
-	if (p == '\0')
-		return (0);
-	for (i = 0; i < size; i++)
 	{
-		p[i] = c;
+		return (NULL);
 	}
-	return (p);
+	s = malloc(sizeof(char) * size);
+	if (s == NULL)
+	{
+		return (NULL);
+	}
+	else
+	{
+		unsigned int i = 0;
+		while (s[i] == '\0')
+		{
+			s[i] = c;
+			i++;
+		}
+	}
+	return (s);
 }
-
