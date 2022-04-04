@@ -17,12 +17,16 @@ char *_strdup(char *str)
 	{
 		return (NULL);
 	}
+
 	j = 0;
+
 	while (str[j] != 0)
 	{
 		j++;
 	}
+
 	ret = malloc(1 + (j *sizeof(*str)));
+
 	if (ret == NULL)
 	{
 		return (NULL);
@@ -34,5 +38,6 @@ char *_strdup(char *str)
 			ret[i] = str[i];
 		}
 	}
+
 	return (ret);
 }
