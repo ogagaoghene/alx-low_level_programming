@@ -1,43 +1,33 @@
-#include "holberton.h"
+#include "main.h"
 #include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
 /**
-  *_strdup - main function
-  *@str : the car that will have the size
-  *Return: character
-  */
+ * _strdup - copy a string to newly allocated space in memory
+ * @str: pointer to string
+ * Return: pointer
+ */
 
 char *_strdup(char *str)
 {
-	int i, j;
-	char *ret;
+	char *s;
+	int i = 0, j;
 
-	if (str == NULL)
+	if (!str)
+		return (NULL);
+
+	while (*(str + i))
+		i++;
+	i++;
+	s = malloc(sizeof(char) * i);
+
+	if (s == NULL)
 	{
 		return (NULL);
 	}
 
-	j = 0;
-
-	while (str[j] != 0)
+	for (j = 0; j <= i; j++)
 	{
-		j++;
+		s[j] = str[j];
 	}
 
-	ret = malloc(1 + (j *sizeof(*str)));
-
-	if (ret == NULL)
-	{
-		return (NULL);
-	}
-	else
-	{
-		for (i = 0; i < j; i++)
-		{
-			ret[i] = str[i];
-		}
-	}
-
-	return (ret);
+	return (s);
 }
